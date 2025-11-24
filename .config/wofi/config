@@ -1,0 +1,10 @@
+allow_images=true
+show=drun
+width=400
+height=300
+location=center
+term=foot
+hide_scroll=true
+no_actions=true
+prompt=Search...
+
