@@ -6,7 +6,9 @@
     "margin-right": 20,
     "height": 34,
     "modules-left": [
-    "custom/network-speed"
+    "custom/network-speed",
+    "custom/cpu",
+    "custom/ram"
     ],
     "modules-center": [
         "clock"
@@ -18,7 +20,16 @@
         "battery",
         "tray"
     ],
+    "custom/ram": {
+    "exec": "~/.config/waybar/scripts/ram.sh",
+    "interval": 2,
+    "format": "{}"},
 
+    "custom/cpu": {
+        "exec": "~/.config/waybar/scripts/cpu.sh",
+        "interval": 2,
+        "format": "{}"
+      },
     "workspaces": {
         "disable-scroll": true,
         "format": "{name}"

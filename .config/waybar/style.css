@@ -23,7 +23,9 @@ window#waybar {
     background: rgba(255,255,255,0.3);
     font-weight: bold;
 }
-
+#custom-cpu,
+#custom-ram,
+#custom-network-speed,
 #clock,
 #network,
 #bluetooth,
