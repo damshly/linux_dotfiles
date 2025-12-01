@@ -9,4 +9,7 @@ get_value() {
 key="$1"
 value="$(get_value "$key")"
 
-echo "the current value of $key is $value"
+for key in "$@"; do 
+  value="$(get_value "$key")"
+  echo "The current value of '$key' is: $value"
+done
