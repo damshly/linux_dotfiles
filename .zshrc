@@ -136,6 +136,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias dot='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias nv='nvim'
+alias qe='virsh -c qemu:///system'
 POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # auto-start tmux only if interactive shell
@@ -149,3 +150,5 @@ fi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+. "$HOME/.local/bin/env"
