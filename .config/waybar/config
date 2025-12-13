@@ -1,80 +1,85 @@
 {
-    "layer": "top",
-    "position": "top",
-    "margin-top": 6,
-    "margin-left": 20,
-    "margin-right": 20,
-    "height": 34,
-    "modules-left": [
-    "custom/network-speed",
-    "custom/cpu",
-    "custom/ram"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "network",
-        "bluetooth",
-        "pulseaudio",
-        "battery",
-        "tray"
-    ],
-    "custom/ram": {
-    "exec": "~/.config/waybar/scripts/ram.sh",
+  "position": "top",
+  "layer": "top",
+  "output": "eDP-1",
+  "height": 16,
+  "margin-top": 10,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "modules-left": ["custom/launcher"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["network", "pulseaudio", "custom/clock", "custom/cpu", "custom/ram", "custom/disk", "custom/battery"],
+  
+  "custom/cpu": {
+    "exec": "~/.config/waybar/scripts/cpu.sh",
     "interval": 2,
-    "format": "{}"},
+    "tooltip": false
+  },
+  "custom/ram": {
+    "exec": "~/.config/waybar/scripts/ram.sh",
+    "interval": 5,
+    "tooltip": false
+  },
+  "custom/disk": {
+    "exec": "~/.config/waybar/scripts/disk.sh",
+    "interval": 30,
+    "tooltip": false
+  },
+  "custom/battery": {
+    "exec": "~/.config/waybar/scripts/battery.sh",
+    "interval": 30,
+    "tooltip": false
+  },
 
-    "custom/cpu": {
-        "exec": "~/.config/waybar/scripts/cpu.sh",
-        "interval": 2,
-        "format": "{}"
-      },
-    "workspaces": {
-        "disable-scroll": true,
-        "format": "{name}"
-    },
-
-    "clock": {
-        "format": "  {:%H:%M   %a %d %b}"
-    },
-
-    "network": {
-        "format-wifi": "  {essid}",
-        "format-ethernet": "  {ipaddr}",
-        "format-disconnected": "",
-        "tooltip": true
-    },
-    "custom/network-speed":{
-        "exec": "~/.config/waybar/scripts/network.sh",
-        "interval": 1,
-        "format": {}
+  "custom/clock": {
+    "exec": "~/.config/waybar/scripts/clock.sh",
+    "format": "{}",
+    "interval": 1,
+    "return-type": "text",
+    "tooltip": false
+  },
+	
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": false,
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "format": "{icon}",
+    "tooltip": false,
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": "",
+      "sort-by-number": true
       }
+  },
 
-,
-    "bluetooth": {
-        "format": " {status}",
-        "format-disabled": " ",
-        "format-connected": " ✓",
-        "tooltip": true
+  "custom/launcher": {
+    "format": "<span foreground='#00FFFF' rise='-1000'>󰣇</span>",
+    "on-click": "bash $HOME/.config/rofi/powermenu/powermenu",
+    "on-click-right": "bash $HOME/.config/rofi/run.sh",
+    "tooltip": false  
+  },
+	
+	"network": {
+    "format-ethernet": "<span foreground='#7aa2f7'>🌐 </span>{ipaddr}",
+    "format-linked": "<span foreground='#7aa2f7'>🌐 </span>{ifname} (No IP)",
+    "tooltip": false
+	},
+
+  "pulseaudio": {
+    "format": "<span font='12' rise='800'>{icon}</span><span font='10' rise='2200'> {volume}%</span>",
+    "format-muted": "<span font='12' rise='800'>🔇 </span><span font='10' rise='2200'>Mute</span>",
+    "format-icons": {
+      "default": ["🔈", "🔉", "🔊"]
     },
-
-    "pulseaudio": {
-        "format": " {volume}%",
-        "scroll-step": 5,
-        "on-click": "pavucontrol",
-        "on-click-right": "amixer set Master toggle"
-    },
-
-    "battery": {
-        "format": " {capacity}%",
-        "format-charging": " {capacity}%",
-        "tooltip": true
-    },
-
-    "tray": {
-        "icon-size": 18,
-        "spacing": 10
-    }
+    "on-click": "bash ~/.config/waybar/scripts/volume mute",
+    "on-scroll-up": "bash ~/.config/waybar/scripts/volume up",
+    "on-scroll-down": "bash ~/.config/waybar/scripts/volume down",
+    "scroll-step": 5,
+    "on-click-right": "pavucontrol",
+    "tooltip": false
+  }
 }
-

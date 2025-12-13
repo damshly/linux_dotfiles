@@ -1,44 +1,95 @@
 * {
-    font-family: "JetBrainsMono Nerd Font", monospace;
-    font-size: 14px;
-    color: #ffffff;
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 8px;
+    font-style: normal;
+    min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(34, 34, 34, 0.65); /* شفافية قوية */
-    border-radius: 16px;
-    padding: 6px 12px;
-    margin: 0px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.45);
+    background: transparent;
 }
 
+#workspaces {
+    background: #11111B;
+    margin: 6.5px 5px;
+    padding: 8px 5px;
+    border-radius: 16px;
+    border: solid 0px #cdd6f4;
+    font-weight: normal;
+    font-style: normal;
+}
 #workspaces button {
-    padding: 6px 10px;
-    margin: 0 4px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.1);
+    padding: 0px 5px;
+    margin: 0px 3px;
+    border-radius: 16px;
+    color: #2f354a;
+    background-color: #2f354a;
+    transition: all 0.2s ease-in-out;
 }
 
 #workspaces button.active {
-    background: rgba(255,255,255,0.3);
-    font-weight: bold;
+    color: #cdd6f4;
+    background-color: #cdd6f4;
+    border-radius: 16px;
+    min-width: 40px;
+    background-size: 400% 400%;
+    transition: all 0.2s ease-in-out;
 }
-#custom-cpu,
-#custom-ram,
-#custom-network-speed,
-#clock,
-#network,
-#bluetooth,
-#pulseaudio,
-#battery,
-#tray {
-    margin: 0 10px;
-    padding: 4px 8px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 12px;
+
+#workspaces button:hover {
+    background-color: transparent;
+    color: transparent;
+    border-radius: 16px;
+    min-width: 30px;
+    background-size: 400% 400%;
+}
+
+#custom-clock {
+    background: #11111B;
+    color: #ffffff;
+    font-size: 13px;
+    margin: 6.5px 30px 5px 0px;
+    padding: 6.5px 8px;
+    border-radius: 16px;
+}
+
+#custom-launcher {
+    font-size: 20px;
+    background: #11111B;
+    border-radius: 20px;
+    border: solid 0px #f4d9e1;
+    margin: 6.5px 0px 5px 28px;
+    padding: 0px 15px 0px 8px;
+    transition: .3s;
+}
+
+#custom-launcher:hover {
+    background: #2a2a38;
+    transition: .3s;
 }
 
 #pulseaudio {
-    padding-right: 12px;
+	background: #11111B;
+    border-radius: 16px;
+    border: solid 0px #f4d9e1;
+    margin: 6.5px 10px 5px 0px;
+    padding: 0px 8px;
+    color: #ffffff;
 }
 
+#pulseaudio.muted {
+    border-radius: 16px;
+    color: red;
+}
+
+#network, #custom-cpu, #custom-ram, #custom-disk, #custom-battery{
+    background: #11111B;
+    border-radius: 16px;
+    border: solid 0px #f4d9e1;
+    margin: 6.5px 10px 5px 0px;
+    padding: 0px 8px;
+    color: #ffffff;
+    font-size: 13px;
+}
