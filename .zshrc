@@ -152,3 +152,9 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 . "$HOME/.local/bin/env"
+
+# dotnet 
+export DOTNET_ROOT=/usr/share/dotnet
+#export PATH=$DOTNET_ROOT:$PATH
+export PATH="$PATH:$HOME/.dotnet/tools"
+
