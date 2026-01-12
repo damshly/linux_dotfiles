@@ -140,9 +140,9 @@ alias qe='virsh -c qemu:///system'
 POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # auto-start tmux only if interactive shell
-if [[ $- == *i* ]] && [ -z "$TMUX" ]; then
-  exec tmux
-fi
+#if [[ $- == *i* ]] && [ -z "$TMUX" ]; then
+#  exec tmux
+#fi
 
 # bun completions
 [ -s "/home/damshly/.bun/_bun" ] && source "/home/damshly/.bun/_bun"
@@ -155,6 +155,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # dotnet 
 export DOTNET_ROOT=/usr/share/dotnet
-#export PATH=$DOTNET_ROOT:$PATH
+export PATH=$DOTNET_ROOT:$PATH
 export PATH="$PATH:$HOME/.dotnet/tools"
 
