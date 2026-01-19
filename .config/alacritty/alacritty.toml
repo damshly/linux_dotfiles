@@ -1,0 +1,135 @@
+[colors.bright]
+
+black = "0x686868"
+
+blue = "0x57c7ff"
+
+cyan = "0x9aedfe"
+
+green = "0x5af7a0"
+
+magenta = "0xff6ac1"
+
+red = "0xff616e"
+
+white = "0xffffff"
+
+yellow = "0xf3ffa1"
+
+
+
+[colors.normal]
+
+black = "0x1a1a1a"
+
+blue = "0x57c7ff"
+
+cyan = "0x9aedfe"
+
+green = "0x5af78e"
+
+magenta = "0xff6ac1"
+
+red = "0xff5c57"
+
+white = "0xf1f1f0"
+
+yellow = "0xf3f99d"
+
+
+
+[colors.primary]
+
+background = "0x0d0d0d"
+
+foreground = "0xeaeaea"
+
+
+
+[cursor.style]
+
+blinking = "On"
+
+shape = "Block"
+
+
+
+[font]
+
+size = 10
+
+
+
+[font.bold]
+
+family = "JetBrainsMono Nerd Font"
+
+style = "Bold"
+
+
+
+[font.italic]
+
+family = "JetBrainsMono Nerd Font"
+
+style = "Italic"
+
+
+
+[font.normal]
+
+family = "JetBrainsMono Nerd Font"
+
+style = "Regular"
+
+
+
+[[keyboard.bindings]]
+
+action = "Paste"
+
+key = "V"
+
+mods = "Control|Shift"
+
+
+
+[[keyboard.bindings]]
+
+action = "Copy"
+
+key = "C"
+
+mods = "Control|Shift"
+
+
+
+[scrolling]
+
+history = 10000
+
+
+
+[terminal.shell]
+
+program = "/usr/bin/zsh"
+
+
+
+[window]
+
+dynamic_title = true
+
+opacity = 0.97
+
+
+
+[window.padding]
+
+x = 10
+
+y = 10
+
+
+
+[terminal]
