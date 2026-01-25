@@ -2,15 +2,21 @@
   "position": "top",
   "layer": "top",
   "output": "eDP-1",
-  "height": 16,
+  "height": 42,
   "margin-top": 10,
   "margin-bottom": 0,
   "margin-left": 0,
   "margin-right": 0,
   "modules-left": ["custom/launcher"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["network", "pulseaudio", "custom/clock", "custom/cpu", "custom/ram", "custom/disk", "custom/battery"],
+  "modules-right": ["tray" ,"network", "pulseaudio", "custom/clock", "custom/cpu", "custom/ram", "custom/disk", "custom/battery"],
   
+"tray": {
+    "icon-size": 21,
+    "spacing": 10,
+    "show-passive-items": true
+},
+
   "custom/cpu": {
     "exec": "~/.config/waybar/scripts/cpu.sh",
     "interval": 2,

@@ -83,8 +83,29 @@ window#waybar {
     border-radius: 16px;
     color: red;
 }
+#tray {
+    background-color: #11111B;
+    border-radius: 16px;
+    margin: 4px 10px; /* تقليل المارجن ليتناسب مع ارتفاع 16 */
+    padding: 0px 10px;
+}
 
-#network, #custom-cpu, #custom-ram, #custom-disk, #custom-battery{
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+/* هاد السطر هو السحر: بيجبر الأيقونات جوا الـ tray تكون قابلة للضغط */
+#tray button {
+    background: transparent;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+#network, #custom-cpu, #custom-ram, #custom-disk, #custom-battery {
     background: #11111B;
     border-radius: 16px;
     border: solid 0px #f4d9e1;
