@@ -158,3 +158,5 @@ export DOTNET_ROOT=/usr/share/dotnet
 export PATH=$DOTNET_ROOT:$PATH
 export PATH="$PATH:$HOME/.dotnet/tools"
 
+
+export TERM=xterm-256color
