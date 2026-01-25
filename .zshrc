@@ -135,9 +135,18 @@ alias ll='ls -lah'
 alias la='ls -A'
 alias l='ls -CF'
 alias dot='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias nv='nvim'
+# alias nv='nvim'
 alias qe='virsh -c qemu:///system'
 POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+
+nv() {
+    if [ -d "$1" ]; then
+        cd "$1" && nvim .
+    else
+        nvim "$1"
+    fi
+}
 
 # auto-start tmux only if interactive shell
 #if [[ $- == *i* ]] && [ -z "$TMUX" ]; then

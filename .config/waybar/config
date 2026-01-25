@@ -5,87 +5,84 @@
   "height": 42,
   "margin-top": 10,
   "margin-bottom": 0,
-  "margin-left": 0,
-  "margin-right": 0,
+  "margin-left": 10,
+  "margin-right": 10,
   "modules-left": ["custom/launcher"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["tray" ,"network", "pulseaudio", "custom/clock", "custom/cpu", "custom/ram", "custom/disk", "custom/battery"],
-  
-"tray": {
-    "icon-size": 21,
+  "modules-right": ["tray", "network", "pulseaudio", "group/stats", "custom/clock", "battery"],
+
+  "tray": {
+    "icon-size": 18,
     "spacing": 10,
     "show-passive-items": true
-},
+  },
 
-  "custom/cpu": {
-    "exec": "~/.config/waybar/scripts/cpu.sh",
-    "interval": 2,
-    "tooltip": false
+  "group/stats": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "memory"]
   },
-  "custom/ram": {
-    "exec": "~/.config/waybar/scripts/ram.sh",
-    "interval": 5,
-    "tooltip": false
+
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 2
   },
-  "custom/disk": {
-    "exec": "~/.config/waybar/scripts/disk.sh",
-    "interval": 30,
-    "tooltip": false
+
+  "memory": {
+    "format": " {percentage}%",
+    "tooltip-format": "Used: {used}GB / Total: {total}GB"
   },
-  "custom/battery": {
-    "exec": "~/.config/waybar/scripts/battery.sh",
-    "interval": 30,
-    "tooltip": false
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󱐋 {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "interval": 5
   },
 
   "custom/clock": {
-    "exec": "~/.config/waybar/scripts/clock.sh",
-    "format": "{}",
+    "exec": "date +'%I:%M %p'",
     "interval": 1,
-    "return-type": "text",
+    "format": " {}",
     "tooltip": false
   },
-	
+
   "hyprland/workspaces": {
-    "active-only": false,
-    "all-outputs": false,
-    "disable-scroll": false,
+    "format": "{icon}",
     "on-scroll-up": "hyprctl dispatch workspace e-1",
     "on-scroll-down": "hyprctl dispatch workspace e+1",
-    "format": "{icon}",
-    "tooltip": false,
     "format-icons": {
-      "urgent": "",
-      "active": "",
-      "default": "",
-      "sort-by-number": true
-      }
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "󰙯",
+      "active": "",
+      "default": ""
+    }
   },
 
   "custom/launcher": {
-    "format": "<span foreground='#00FFFF' rise='-1000'>󰣇</span>",
+    "format": "󰣇",
     "on-click": "bash $HOME/.config/rofi/powermenu/powermenu",
-    "on-click-right": "bash $HOME/.config/rofi/run.sh",
-    "tooltip": false  
+    "on-click-right": "bash $HOME/.config/rofi/run.sh"
   },
-	
-	"network": {
-    "format-ethernet": "<span foreground='#7aa2f7'>🌐 </span>{ipaddr}",
-    "format-linked": "<span foreground='#7aa2f7'>🌐 </span>{ifname} (No IP)",
-    "tooltip": false
-	},
 
-  "pulseaudio": {
-    "format": "<span font='12' rise='800'>{icon}</span><span font='10' rise='2200'> {volume}%</span>",
-    "format-muted": "<span font='12' rise='800'>🔇 </span><span font='10' rise='2200'>Mute</span>",
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈀 {ipaddr}",
+    "format-disconnected": "󰖪 Disconnected",
+    "tooltip-format": "{ifname} via {gwaddr}"
+  },
+"pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 Muted",
     "format-icons": {
-      "default": ["🔈", "🔉", "🔊"]
+        "default": ["", "", ""]
     },
-    "on-click": "bash ~/.config/waybar/scripts/volume mute",
-    "on-scroll-up": "bash ~/.config/waybar/scripts/volume up",
-    "on-scroll-down": "bash ~/.config/waybar/scripts/volume down",
-    "scroll-step": 5,
-    "on-click-right": "pavucontrol",
-    "tooltip": false
-  }
+    "on-click": "hyprctl dispatch exec '[float; size 600 400; move 65% 50] kitty -e pulsemixer'"
+}
 }

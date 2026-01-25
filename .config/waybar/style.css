@@ -1,110 +1,29 @@
 * {
     border: none;
-    border-radius: 0px;
+    border-radius: 0;
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 8px;
-    font-style: normal;
-    min-height: 0;
+    font-size: 13px; /* حجم موحد ومريح للعين */
 }
 
 window#waybar {
     background: transparent;
 }
 
-#workspaces {
-    background: #11111B;
-    margin: 6.5px 5px;
-    padding: 8px 5px;
-    border-radius: 16px;
-    border: solid 0px #cdd6f4;
-    font-weight: normal;
-    font-style: normal;
-}
-#workspaces button {
-    padding: 0px 5px;
-    margin: 0px 3px;
-    border-radius: 16px;
-    color: #2f354a;
-    background-color: #2f354a;
-    transition: all 0.2s ease-in-out;
-}
-
-#workspaces button.active {
+/* تنسيق الـ Pills المشترك */
+#workspaces, #custom-launcher, #custom-clock, #pulseaudio, #network, #cpu, #memory, #battery {
+    background: #11111b;
     color: #cdd6f4;
-    background-color: #cdd6f4;
+    margin: 5px 4px;
+    padding: 0 12px;
     border-radius: 16px;
-    min-width: 40px;
-    background-size: 400% 400%;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease;
 }
 
-#workspaces button:hover {
-    background-color: transparent;
-    color: transparent;
-    border-radius: 16px;
-    min-width: 30px;
-    background-size: 400% 400%;
-}
-
-#custom-clock {
-    background: #11111B;
-    color: #ffffff;
-    font-size: 13px;
-    margin: 6.5px 30px 5px 0px;
-    padding: 6.5px 8px;
-    border-radius: 16px;
-}
-
-#custom-launcher {
-    font-size: 20px;
-    background: #11111B;
-    border-radius: 20px;
-    border: solid 0px #f4d9e1;
-    margin: 6.5px 0px 5px 28px;
-    padding: 0px 15px 0px 8px;
-    transition: .3s;
-}
-
-#custom-launcher:hover {
-    background: #2a2a38;
-    transition: .3s;
-}
-
-#pulseaudio {
-	background: #11111B;
-    border-radius: 16px;
-    border: solid 0px #f4d9e1;
-    margin: 6.5px 10px 5px 0px;
-    padding: 0px 8px;
-    color: #ffffff;
-}
-
-#pulseaudio.muted {
-    border-radius: 16px;
-    color: red;
-}
 #tray {
-    background-color: #11111B;
-    color: #CDD6F4;
+    background-color: #11111b; /* نفس خلفية بقية الجهاز */
     border-radius: 16px;
-    margin: 4px 10px; /* تقليل المارجن ليتناسب مع ارتفاع 16 */
-    padding: 0px 10px;
-}
-#tray menu {
-    background-color: #11111B;
-    color: #CDD6F4;
-    border: 1px solid #313244;
-    padding: 8px;
-    text-shadow: none;
-}
-
-#tray menu item {
-    color: #CDD6F4;
-    padding: 4px;
-}
-
-#tray menu item:hover {
-    background-color: #313244;
+    margin: 5px 4px;
+    padding: 0 10px;
 }
 
 #tray > .passive {
@@ -113,21 +32,43 @@ window#waybar {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
+    background-color: #f38ba8; /* لون أحمر للتنبيه */
 }
 
-/* هاد السطر هو السحر: بيجبر الأيقونات جوا الـ tray تكون قابلة للضغط */
-#tray button {
-    background: transparent;
-    border: none;
-    padding: 0px;
-    margin: 0px;
+/* تمييز الـ Workspaces */
+#workspaces button {
+    color: #45475a;
+    padding: 0 5px;
 }
-#network, #custom-cpu, #custom-ram, #custom-disk, #custom-battery {
-    background: #11111B;
-    border-radius: 16px;
-    border: solid 0px #f4d9e1;
-    margin: 6.5px 10px 5px 0px;
-    padding: 0px 8px;
-    color: #ffffff;
-    font-size: 13px;
+
+#workspaces button.active {
+    color: #89b4fa;
+    background: #313244;
+    border-radius: 12px;
+}
+
+#workspaces button:hover {
+    background: #45475a;
+    color: #cdd6f4;
+}
+
+/* تأثيرات الـ Hover */
+#network:hover, #pulseaudio:hover, #cpu:hover, #memory:hover, #battery:hover {
+    background: #313244;
+}
+
+/* حالات خاصة للبطارية */
+#battery.warning { color: #fab387; }
+#battery.critical { color: #f38ba8; }
+#battery.charging { color: #a6e3a1; }
+
+/* تنسيق الـ Launcher (أيقونة آرتش) */
+#custom-launcher {
+    font-size: 18px;
+    color: #89b4fa;
+}
+
+/* تنسيق الـ Clock */
+#custom-clock {
+    font-weight: bold;
 }
