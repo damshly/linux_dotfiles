@@ -85,9 +85,26 @@ window#waybar {
 }
 #tray {
     background-color: #11111B;
+    color: #CDD6F4;
     border-radius: 16px;
     margin: 4px 10px; /* تقليل المارجن ليتناسب مع ارتفاع 16 */
     padding: 0px 10px;
+}
+#tray menu {
+    background-color: #11111B;
+    color: #CDD6F4;
+    border: 1px solid #313244;
+    padding: 8px;
+    text-shadow: none;
+}
+
+#tray menu item {
+    color: #CDD6F4;
+    padding: 4px;
+}
+
+#tray menu item:hover {
+    background-color: #313244;
 }
 
 #tray > .passive {
