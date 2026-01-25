@@ -57,6 +57,14 @@ window#waybar {
     background: #313244;
 }
 
+#network {
+    /* شيل الـ min-width القديم وجرب هاد */
+    padding: 0 10px;
+    margin: 5px 4px;
+    /* نستخدم font-variant لضمان إنو الأرقام ما تغير عرض الخط */
+    font-feature-settings: "tnum"; 
+}
+
 /* حالات خاصة للبطارية */
 #battery.warning { color: #fab387; }
 #battery.critical { color: #f38ba8; }

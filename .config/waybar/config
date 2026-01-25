@@ -22,12 +22,13 @@
     "modules": ["cpu", "memory"]
   },
 
-  "cpu": {
+"cpu": {
     "format": " {usage}%",
-    "interval": 2
-  },
-
-  "memory": {
+    "interval": 2,
+    "on-click": "kitty -e btop", // حركة إضافية: كبسة تفتحلك btop
+    "tooltip": true
+},
+"memory": {
     "format": " {percentage}%",
     "tooltip-format": "Used: {used}GB / Total: {total}GB"
   },
@@ -65,18 +66,19 @@
     }
   },
 
-  "custom/launcher": {
-    "format": "󰣇",
-    "on-click": "bash $HOME/.config/rofi/powermenu/powermenu",
+  "custom/launcher": { "format": "󰣇",
+    "on-click": "bash $HOME",
     "on-click-right": "bash $HOME/.config/rofi/run.sh"
   },
 
   "network": {
-    "format-wifi": " {essid}",
-    "format-ethernet": "󰈀 {ipaddr}",
-    "format-disconnected": "󰖪 Disconnected",
+    "interval": 1,
+    "format-wifi": "⬆ {bandwidthUpBytes} ⬇ {bandwidthDownBytes}",
+    "format-ethernet": "⬆ {bandwidthUpBytes} ⬇ {bandwidthDownBytes}",    "format-disconnected": "󰖪 Disconnected",
+    "min-length": 25,
+    "max-length": 30,
     "tooltip-format": "{ifname} via {gwaddr}"
-  },
+    },
 "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": "󰝟 Muted",
