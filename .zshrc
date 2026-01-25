@@ -151,7 +151,7 @@ POWERLEVEL9K_INSTANT_PROMPT=quiet
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-. "$HOME/.local/bin/env"
+# . "$HOME/.local/bin/env"
 
 # dotnet 
 export DOTNET_ROOT=/usr/share/dotnet
