@@ -170,3 +170,11 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 
 export TERM=xterm-256color
 export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share
+
+# pnpm
+export PNPM_HOME="/home/damshly/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

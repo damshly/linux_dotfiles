@@ -1,7 +1,8 @@
 #!/bin/bash
+# Path: ~/.scripts/screenshot.sh
 
-# تأكد إنو المجلد موجود
-mkdir -p ~/Pictures
+# تحديد المسار واسم الملف بدون رموز ":"
+FILE_PATH="$HOME/Pictures/Screenshots/shot_$(date +%Y%m%d_%H%M%S).png"
 
-# لقطة شاشة كاملة
-grim ~/Pictures/screenshot-$(date +%F_%T).png
+# الأمر المباشر
+/usr/bin/grim "$FILE_PATH"
