@@ -42,7 +42,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: #89b4fa;
+    color: #cdd6f4;
     background: #313244;
     border-radius: 12px;
 }
