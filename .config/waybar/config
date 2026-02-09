@@ -25,7 +25,7 @@
 "cpu": {
     "format": " {usage}%",
     "interval": 2,
-    "on-click": "hyprctl dispatch exec '[float; size 1000 600; move 65% 50] kitty -e btop'", // حركة إضافية: كبسة تفتحلك btop
+    "on-click": "hyprctl dispatch exec '[float; size 1000 600; move 65% 50] alacritty -e btop'", // حركة إضافية: كبسة تفتحلك btop
     "tooltip": true
 },
 "memory": {

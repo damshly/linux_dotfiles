@@ -134,9 +134,10 @@ alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias la='ls -A'
 alias l='ls -CF'
-alias dot='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/linux_dotfiles/.git --work-tree=$HOME'
 # alias nv='nvim'
 alias qe='virsh -c qemu:///system'
+alias vi='nvim'
 POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 
