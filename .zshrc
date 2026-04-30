@@ -138,6 +138,7 @@ alias dot='/usr/bin/git --git-dir=$HOME/linux_dotfiles/.git --work-tree=$HOME'
 # alias nv='nvim'
 alias qe='virsh -c qemu:///system'
 alias vi='nvim'
+alias mse='microsoft-edge-stable'
 POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 
@@ -167,6 +168,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export DOTNET_ROOT=/usr/share/dotnet
 export PATH=$DOTNET_ROOT:$PATH
 export PATH="$PATH:$HOME/.dotnet/tools"
+export PATH="$PATH:/usr/share/dotnet/tools"
 
 
 export TERM=xterm-256color
