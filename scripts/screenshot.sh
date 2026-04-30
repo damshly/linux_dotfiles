@@ -26,7 +26,7 @@ case "$RESPONSE" in
         # Open Satty for editing
         # -f: input file, --output-filename: output file
         # Satty allows intuitive cropping, drawing, and saving.
-        satty -f "$FILE_PATH" --output-filename "$FILE_PATH"
+        hyprctl dispatch exec "[float;center;size 900 600] satty -f $FILE_PATH --output-filename $FILE_PATH"
         ;;
     "delete")
         # Remove the file and notify
